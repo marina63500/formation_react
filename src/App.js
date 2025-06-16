@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from "./pages/Home";
+import About from "./pages/About";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />}/>
+      <Route path="/about" element={<About />}/>
+    {/* path = "*" fonctionne qd l'url ne correspond à rien de déclarer au dessus,il fait comme une redirection */}
+      <Route path="*" element={<Home />}/>
+    </Routes>
+  
+  </BrowserRouter>
+ 
   );
-}
+};
 
 export default App;
+
+
+// un component est une fonction que l'on peut importer n'importe ou dans le projet(avec les plugins plus besoin de faire les fonctions)
+// const App = () => {
+//   return (
+// <h1>Hello React</h1>
+//)
+  
+// };
+
+// export default App;
+
+
