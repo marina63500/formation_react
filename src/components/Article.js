@@ -72,7 +72,7 @@ const Article = ({ article }) => {
             )}
            
             <button 
-            onClick={(){
+            onClick={()=> {
               if (window.confirm("Voulez-vous vraiment supprimer cet article?")
               ) {
                 handleDelete()
